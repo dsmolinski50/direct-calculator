@@ -1,0 +1,116 @@
+/* ------------------------------
+   Global & Container Styles
+   ------------------------------ */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* ------------------------------
+   Table Wrapper for Horizontal Scrolling
+   ------------------------------ */
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 30px;
+}
+
+/* ------------------------------
+   Table & Column Layout
+   ------------------------------ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* honor column widths */
+}
+
+colgroup col {
+  /* these are your 50% / 25% / 25% layouts */
+}
+
+th, td {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+}
+
+/* Right‐align the "Value" column */
+th:nth-child(2),
+td:nth-child(2) {
+  text-align: right;
+}
+
+th {
+  background: #f9f9f9;
+}
+
+/* ------------------------------
+   Input Styling
+   ------------------------------ */
+/* Currency inputs: fixed on desktop, full‐width on mobile */
+td input.currency-input {
+  width: 100px;
+  padding: 4px 8px;
+  box-sizing: border-box;
+  font: inherit;
+  text-align: right;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+/* Percent inputs: fixed on desktop, compact on mobile */
+td input.percent-input {
+  width: 60px;
+  padding: 4px 8px;
+  box-sizing: border-box;
+  font: inherit;
+  text-align: right;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+/* Remove spinner arrows */
+.currency-input::-webkit-inner-spin-button,
+.currency-input::-webkit-outer-spin-button,
+.percent-input::-webkit-inner-spin-button,
+.percent-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.currency-input[type="text"],
+.percent-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.percent-container {
+  display: flex;
+  align-items: center;
+}
+
+.percent-symbol {
+  margin-left: 4px;
+  user-select: none;
+}
+
+/* ------------------------------
+   Highlighted Rows
+   ------------------------------ */
+.total-row td {
+  background: #fafafa;
+  font-weight: bold;
+}
+
+.subtotal td {
+  background: #f1f1f1;
+  font-weight: bold;

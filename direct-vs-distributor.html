@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Amazon 2025 Projections Calculator</title>
+  <link rel="stylesheet" href="direct-vs-distributor.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- Summary Table -->
+    <div class="table-wrapper">
+      <table id="summary-table">
+        <colgroup>
+          <col style="width:50%;" />
+          <col style="width:25%;" />
+          <col style="width:25%;" />
+        </colgroup>
+        <tr><td colspan="3"><h1>Selling Direct Net Profit vs 3rd Party Profit</h1></td></tr>
+        <tr class="subtotal">
+          <td>Difference</td>
+          <td colspan="2"><span id="dist-difference">$0</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Sell to 3rd Party -->
+    <div class="table-wrapper">
+      <table id="dist-table">
+        <colgroup>
+          <col style="width:50%;" />
+          <col style="width:25%;" />
+          <col style="width:25%;" />
+        </colgroup>
+        <tr><td colspan="3"><h1>Sell to 3rd Party</h1></td></tr>
+        <tr><th>Line Item</th><th>Value</th><th>% of Sales</th></tr>
+        <tr>
+          <td>Amazon Sales</td>
+          <td>
+            <input
+              type="text"
+              id="dist-amazon-sales"
+              class="currency-input"
+              value="2000000"
+            />
+          </td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Wholesale Sales</td>
+          <td><span id="dist-wholesale-amt">$0</span></td>
+          <td>
+            <div class="percent-container">
+              <input
+                type="number"
+                id="dist-wholesale-pct"
+                class="percent-input"
+                value="50.0"
+                step="0.1"
+                min="0"
+              />
+              <span class="percent-symbol">%</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Advertising Expenses</td>
+          <td><span id="dist-ad-expenses">$0</span></td>
+          <td>
+            <div class="percent-container">
+              <input
+                type="number"
+                id="dist-ad-pct"
+                class="percent-input"
+                value="9.0"
+                step="0.1"
+                min="0"
+              />
+              <span class="percent-symbol">%</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Other Fees</td>
+          <td><span id="dist-other-fees-amt">$0</span></td>
+          <td>
+            <div class="percent-container">
+              <input
+                type="number"
+                id="dist-other-pct"
+                class="percent-input"
+                value="0.0"
+                step="0.1"
+                min="0"
+              />
+              <span class="percent-symbol">%</span>
+            </div>
+          </td>
+        </tr>
+        <tr class="total-row">
+          <td>Brand Profit</td>
+          <td><span id="dist-brand-profit">$0</span></td>
+          <td>—</td>
+        </tr>
+        <tr class="subtotal">
+          <td><strong>Net Profit</strong></td>
+          <td colspan="2"><span id="dist-net-profit-pct">0.0%</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Brand Selling Direct on Amazon -->
+    <div class="table-wrapper">
+      <table id="direct-table">
+        <colgroup>
+          <col style="width:50%;" />
+          <col style="width:25%;" />
+          <col style="width:25%;" />
+        </colgroup>
+        <tr><td colspan="3"><h1>Brand Selling Direct on Amazon</h1></td></tr>
+        <tr><th>Line Item</th><th>Value</th><th>% of Sales</th></tr>
+        <tr>
+          <td>Amazon Sales</td>
+          <td>
+            <input
+              type="text"
+              id="direct-amazon-sales"
+              class="currency-input"
+              autocomplete="off"
+              inputmode="numeric"
+              value="2000000"
+            />
+          </td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Amazon Commission</td>
+          <td><span id="direct-commission-amount">$0</span></td>
+          <td>
+            <div class="percent-container">
+              <input
+                type="number"
+                id="direct-commission-pct"
+                class="percent-input"
+                value="15.0"
+                step="0.1"
+                min="0"
+              />
+              <span class="percent-symbol">%</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FBA Fees</td>
+          <td><span id="direct-fba-fees-amt">$0</span></td>
+          <td>
+            <div class="percent-container">
+              <input
+                type="number"
+                id="direct-fba-pct"
+                class="percent-input"
+                value="10.0"
+                step="0.1"
+                min="0"
+              />
+              <span class="percent-symbol">%</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Net Revenue</td>
+          <td><span id="direct-net-revenue">$0</span></td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Advertising Expenses</td>
+          <td><span id="direct-ad-expenses">$0</span></td>
+          <td>
+            <div class="percent-container">
+              <input
+                type="number"
+                id="direct-ad-pct"
+                class="percent-input"
+                value="9.0"
+                step="0.1"
+                min="0"
+              />
+              <span class="percent-symbol">%</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>beBOLD Management Fee</td>
+          <td><span id="direct-mgmt-fee">$0</span></td>
+          <td>
+            <div class="percent-container">
+              <input
+                type="number"
+                id="direct-mgmt-pct"
+                class="percent-input"
+                value="0.0"
+                step="0.1"
+                min="0"
+              />
+              <span class="percent-symbol">%</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Returns</td>
+          <td><span id="direct-returns-amt">$0</span></td>
+          <td>
+            <div class="percent-container">
+              <input
+                type="number"
+                id="direct-returns-pct"
+                class="percent-input"
+                value="1.5"
+                step="0.1"
+                min="0"
+              />
+              <span class="percent-symbol">%</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Other Fees</td>
+          <td><span id="direct-other-fees-amt">$0</span></td>
+          <td>
+            <div class="percent-container">
+              <input
+                type="number"
+                id="direct-other-pct"
+                class="percent-input"
+                value="0.0"
+                step="0.1"
+                min="0"
+              />
+              <span class="percent-symbol">%</span>
+            </div>
+          </td>
+        </tr>
+        <tr class="total-row">
+          <td>Brand Profit</td>
+          <td><span id="direct-brand-profit">$0</span></td>
+          <td>—</td>
+        </tr>
+        <tr class="subtotal">
+          <td><strong>Net Profit</strong></td>
+          <td colspan="2"><span id="direct-net-profit-pct">0.0%</span></td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+  <script src="calculator.js"></script>
+</body>
+</html>
